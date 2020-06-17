@@ -11,6 +11,7 @@ Returns: an integer
 #         if arr[i] is not arr[i + 1]:
 #             return arr[i]
 def single_number(arr):
+    #multiplies all different values by 2, then subtracts from sum
     return 2 * sum(set(arr)) - sum(arr)
 
 if __name__ == '__main__':
