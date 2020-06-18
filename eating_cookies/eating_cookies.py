@@ -2,17 +2,17 @@
 Input: an integer
 Returns: an integer
 '''
-def eating_cookies(n):
-    # Your code here
-    # base cases
-    if n == 0:
-        return 1
-    elif n == 1:
-        return 1
-    elif n == 2:
-        return 2
-    else:
-        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+# def eating_cookies(n):
+#     # Your code here
+#     # base cases
+#     if n == 0:
+#         return 1
+#     elif n == 1:
+#         return 1
+#     elif n == 2:
+#         return 2
+#     else:
+#         return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
     
 # def eating_cookies(n, cache=None):
 #     # negative cookies left: not possible. Return 0 as a solution.
@@ -47,26 +47,26 @@ def eating_cookies(n):
 
 #     return n_cookies
     
-# def eating_cookies(n, cache=None):
-#     # Your code here
-#     if cache is None:
-#         cache = {}
-#     # base cases
-#     if n == 0:
-#         return 1
-#     elif n == 1:
-#         return 1
-#     elif n == 2:
-#         return 2
-#     # elif n == 3:
-#     #     return 4
-#     # check if cache exists and has n in cache
-#     elif cache and cache[n]:
-#         return cache[n]
-#     else:
-#         cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
+def eating_cookies(n, cache=None):
+    # Your code here
+    if cache is None:
+        cache = {}
+    # base cases
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    # elif n == 3:
+    #     return 4
+    # check if cache exists and has n in cache
+    elif cache and cache[n]:
+        return cache[n]
+    else:
+        cache[n] = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
     
-#     return cache[n]
+    return cache[n]
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
