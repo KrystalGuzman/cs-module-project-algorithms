@@ -3,16 +3,30 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 # def single_number(arr):
-#     # sort the array
-#     arr.sort()
+#     for elem in arr:
+#         if arr.count(elem) == 1:
+#             return elem
 
-#     # look for a skip in pairs
-#     for i in range(0, len(arr), 2):
-#         if arr[i] is not arr[i + 1]:
-#             return arr[i]
+# def single_number(arr):
+#     #multiplies all different values by 2, then subtracts from sum
+#     return 2 * sum(set(arr)) - sum(arr)
+
 def single_number(arr):
-    #multiplies all different values by 2, then subtracts from sum
-    return 2 * sum(set(arr)) - sum(arr)
+    counts= {}
+    for num in arr:
+
+        if num in counts:
+            # remove item
+            del counts[num]
+        else:
+            #add item
+            counts[num] = 1
+    for k, v in counts.items():
+        if v==1:
+            return k
+
+
+
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
